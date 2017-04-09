@@ -47,7 +47,7 @@ function multiply(num3, num4){
   var productArray = [productOfTwoNumbers, returnMessage];
   return productArray;
 }
-testMultiply(5, 9);
+testSumAndMultiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -61,11 +61,19 @@ Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
+function sumAndMultiply(a, b, c){
+  var arraySumMult = [];
+  var first = sum(sum(a, b)[0], c)[0];
+  var second = multiply(multiply(a,b)[0],c)[0];
+  arraySumMult[0] = first;
+  arraySumMult[1] = second;
+  arraySumMult[2] = a + ' and ' + b + ' and ' + c + ' sum to ' + first + '.';
+  arraySumMult[3] = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + second + '.';
+  console.log(arraySumMult);
+  return arraySumMult;
+}
+testSumAndMultiply(4, 7, 5);
 
-// Write your code here
-// function sumAndMultiply(a,b,c){ //eslint-disable-line
-//
-// }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
