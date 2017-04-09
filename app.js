@@ -87,16 +87,19 @@ Write a function called sumArray() that takes in an array of numbers as its sing
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
-// var testArray = [2,3,4]; //eslint-disable-line
-//
-// function sumArray(testArray){ //eslint-disable-line
-//
-// }
+var testArray = [2,3,4]; //eslint-disable-line
 
-// Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+function sumArray(array){
+  var cursum = 0;
+  var msg = '';
+for (var i=0; i < array.length; i++){
+cursum = sum(array[i], cursum)[0];
+}
+var returnValue = [cursum, array.join(',') + ' was passed in as an array of numbers, and ' + cursum + ' is their sum.'];
+console.log(returnValue);
+return returnValue;
+}
+testSumArray(testArray);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
